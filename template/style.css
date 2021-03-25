@@ -1,0 +1,73 @@
+html {
+    font-size: 62.5%; /*16px x 62,5% = 10px = 1rem */
+    box-sizing: border-box;  /* trabalha os elementos como box para aplicar os efeitos de css */
+}
+
+body {
+    margin: 0; 
+    height: 100vh; /* vh = viewport high = toda a tela */
+    font-size: 1.6rem;  /* =16px */
+    font-family: Helvetica, Arial, sans-serif;  /* Aplica a fonte 1, senão der a próxima */
+}
+
+/* ------------- Layout ---------------- */
+
+.grid-container {
+    display: grid; /*manter o display como flexivel em grids*/
+    grid-template-areas:
+        'header'
+        'main'
+        'footer' ;  /* estruturação do layout */
+    grid-template-columns: 1fr; /* 1 fraguiment = site inteiro com apenas uma coluna, sem sidebars */
+    grid-template-rows: 5rem 1fr 5rem; /* header = 5rem | main = 1 fraguimento | footer = 5rem */
+    height: 100%;
+}
+
+header {
+    grid-area: header; /* conectar com o 'header' indicado grid-template-areas em .grid-container */
+    background-color: #203040;
+}
+
+main {
+    grid-area: main;
+    padding: 1rem;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #203040;
+    color: #ffffff;
+}
+
+/* ------------- Comuns a todo o site ---------------- */
+ /* Remove underline de todos os links do site */
+a {
+    text-decoration: none;
+}
+
+ /* Os links ficam laranja quando passa o mouse */
+a:hover {
+    color: #ff8000;
+}
+
+header a {
+    color: #ffffff;
+    padding: 1rem;
+}
+
+a.brand {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* colocar os itens do header separados em cada canto e em uma única linha */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* para fazer a linha ser responsiva | wrap = se não tiver espaço suficiente ele vai para outra linha*/   
+    justify-content: space-between; /* coloca o maior espaço possivel entre os itens */
+    align-items: center; /* alinhar no centro verticalmente */
+}
+
+.row.center {
+    justify-content: center;
+}
