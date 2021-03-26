@@ -1,0 +1,132 @@
+html {
+  font-size: 62.5%; /*16px x 62,5% = 10px = 1rem */
+  box-sizing: border-box;  /* trabalha os elementos como box para aplicar os efeitos de css */
+}
+
+body {
+  margin: 0; 
+  height: 100vh; /* vh = viewport high = toda a tela */
+  font-size: 1.6rem;  /* =16px */
+  font-family: Helvetica, Arial, sans-serif;  /* Aplica a fonte 1, senão der a próxima */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}
+
+
+
+/* ------------- Layout ---------------- */
+
+.grid-container {
+  display: grid; /*manter o display como flexivel em grids*/
+  grid-template-areas:
+      'header'
+      'main'
+      'footer' ;  /* estruturação do layout */
+  grid-template-columns: 1fr; /* 1 fraguiment = site inteiro com apenas uma coluna, sem sidebars */
+  grid-template-rows: 5rem 1fr 5rem; /* header = 5rem | main = 1 fraguimento | footer = 5rem */
+  height: 100%;
+}
+
+header {
+  grid-area: header; /* conectar com o 'header' indicado grid-template-areas em .grid-container */
+  background-color: #203040;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+}
+
+/* ------------- Comuns a todo o site ---------------- */
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+/* Remove underline de todos os links do site */
+a {
+  text-decoration: none;
+}
+
+/* Os links ficam laranja quando passa o mouse */
+a:hover {
+  color: #ff8000;
+}
+
+header a {
+  color: #ffffff;
+  padding: 1rem;
+}
+
+a.brand {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* colocar os itens do header separados em cada canto e em uma única linha */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* para fazer a linha ser responsiva | wrap = se não tiver espaço suficiente ele vai para outra linha*/   
+  justify-content: space-between; /* coloca o maior espaço possivel entre os itens */
+  align-items: center; /* alinhar no centro verticalmente */
+}
+
+.row.center {
+  justify-content: center;
+}
+
+
+
+/* ------------- Imagens ---------------- */
+
+image {
+  border-radius: 0.5rem;
+}
+
+img.medium {
+  max-width: 29rem;
+  width: 100%;
+}
+
+
+/* ------------- Card ---------------- */
+
+.card {
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body > * { /* aplica-se a todos os elementos filhos de "card-body" (não inclui card-body) */
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.rating span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
