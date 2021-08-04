@@ -31,7 +31,7 @@ function App() {
 
         </main>
 
-        <footer className="row center">All right reserved</footer>
+        <footer className="row center">No one right reserved</footer>
 
       </div>
     </BrowserRouter>
